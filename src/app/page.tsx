@@ -1,35 +1,29 @@
 'use client'; // This is a client component
 import React, { useState, useEffect } from "react";
 import Loading from "./components/Loading"; // Import the Loading component from the correct path
-import Record from "./components/record";
+// import Record from "./components/record";
 import NameCard from "./components/Name_card";
 import Navbar from "./components/Navbar";
-
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [terminalMode, setTerminalMode] = useState(true);
-  
   interface Data {
     homepage: {
       message: string;
     }; 
   }
-
-  const [data, setData] = useState<Data | null>(null);
-
+  const [, setData] = useState<Data | null>(null);
   useEffect(() => {
-    // Simulate an API call with setTimeout
     setTimeout(() => {
-      // Simulating data fetching
       setData({ homepage: { message: "Hello, World!" }});
       setIsLoading(false); // Once data is fetched, set isLoading to false
-    }, 2000); // 2-second delay for simulation
+    }, 2000); 
   }, []);
 
   // Function to toggle between terminal and normal mode
-  const toggleMode = () => {
-    setTerminalMode(!terminalMode);
-  };
+  // const toggleMode = () => {
+  //   setTerminalMode(!terminalMode);
+  // };
   
   return (
     <div>
@@ -95,7 +89,7 @@ const App = () => {
                       <p className="text-gray-300">Worked for Professor Natasha Gownaris in the pursuit of an innovative solution to streamline data collection
 and management. This solution will not only benefit her research team but also contribute significantly to the
 success of the PMI project. By collaborating closely with the USFWS, Professor Gownaris exemplifies a
-commitment to environmental conservation and scientific advancement in the Gulf of Maine's ecosystem.<br></br>
+commitment to environmental conservation and scientific advancement in the Gulf of Maine&apos;s ecosystem.<br></br>
 <a href="https://github.com/TerrelVerneuil/ES-Project" target="_blank" style={{ color: '#0066cc', textDecoration: 'underline' }}>Access Project Here</a> </p>
                     </div>
                   </div>

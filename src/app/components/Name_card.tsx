@@ -119,13 +119,24 @@ const NameCard: React.FC<NameCardProps> = ({ name, description, onExitTerminal }
           <p className="mb-1">- <span className="text-blue-300">skills</span>: List skills</p>
           <p className="mb-1">- <span className="text-blue-300">exit</span>: Exit terminal</p>
           <p className="mb-1">- <span className="text-blue-300">gui</span>: Switch to GUI mode</p>
-          <p className='mb-1'>- <span className='text-blue-300'>Resume</span>: Access Terrel's Resume</p>
+          <p className='mb-1'>- <span className='text-blue-300'>Resume</span>: Access Terrel&apos;s Resume</p>
         </div>
       );
     } else if (trimmedCmd === 'clear' || trimmedCmd === 'cls') {
       setCommandHistory([]);
       return;
-    } else if (trimmedCmd === 'cat profile.txt') {
+    }else if((trimmedCmd === 'cat skills.txt') || (trimmedCmd === 'skills')) {
+      output = (
+        <div>
+          <div className="mb-4">
+          <p className="mb-1"><span className="text-blue-400">Languages:</span> JavaScript, TypeScript, Python</p>
+          <p className="mb-1"><span className="text-blue-400">Frontend:</span> React, Next.js, TailwindCSS</p>
+          <p className="mb-1"><span className="text-blue-400">Backend:</span> Node.js, Express, PostgreSQL</p>
+          <p className="mb-1"><span className="text-blue-400">Tools:</span> Git, Docker, AWS</p>
+          </div>
+        </div>
+      )
+    } else if (trimmedCmd === 'cat profile.txt' || trimmedCmd === 'profile') {
       output = (
         <div>
           <div className="mb-4">
@@ -148,7 +159,7 @@ const NameCard: React.FC<NameCardProps> = ({ name, description, onExitTerminal }
       );
     } else if (trimmedCmd === 'whoami') {
       output = <p>visitor@portfolio ~ $</p>;
-    } else if (trimmedCmd === 'contact') {
+    } else if (trimmedCmd === 'contact' || trimmedCmd === 'cat contact.txt') {
       output = (
         <div>
           <p className="mb-1"><span className="text-blue-400">Email:</span><a href="mailto: terrelverneuil@gmail.com">terrelverneuil@gmail.com</a></p>
@@ -156,7 +167,7 @@ const NameCard: React.FC<NameCardProps> = ({ name, description, onExitTerminal }
           <p className="mb-1"><span className="text-blue-400">LinkedIn:</span> <a href="https://www.linkedin.com/in/terrel-verneuil-63b706167/" target="_blank" >https://www.linkedin.com/in/terrel-verneuil-63b706167/</a></p>
         </div>
       );
-    } else if (trimmedCmd === 'projects') {
+    } else if (trimmedCmd === 'projects' || trimmedCmd === 'projects.txt') {
       output = (
         <div>
           <p className="mb-2"><span className="text-blue-400">NYPD Weekly Crime Mapping</span> Developed an interactive tool for visualizing crime data in New York City using Python for data acquisition and GeoJSON for mapping. The tool helps in analyzing and understanding crime patterns. Features include automatic data download, data cleaning, and interactive mapping with color-coded markers and clustering for better visualization. (*could expand to an application in future)
@@ -165,7 +176,7 @@ const NameCard: React.FC<NameCardProps> = ({ name, description, onExitTerminal }
           <p className="mb-2"><span className="text-blue-400">Environmental Science Project</span> Worked for Professor Natasha Gownaris in the pursuit of an innovative solution to streamline data collection
 and management. This solution will not only benefit her research team but also contribute significantly to the
 success of the PMI project. By collaborating closely with the USFWS, Professor Gownaris exemplifies a
-commitment to environmental conservation and scientific advancement in the Gulf of Maine's ecosystem.
+commitment to environmental conservation and scientific advancement in the Gulf of Maine&apos;s ecosystem.
 <a href="https://github.com/TerrelVerneuil/ES-Project" target="_blank" style={{ color: '#0066cc', textDecoration: 'underline' }}>Access Project Here</a> 
 </p>
           <p className="mb-2"><span className="text-blue-400">Localization Robotics Project</span> Utilized the Anki Cozmo robotics platform to simulate the Kidnapped Robot Problem using Monte Carlo Localization. The robot used its rotation and location data to familiarize itself with its environment and determine its location after being “kidnapped.”
@@ -173,23 +184,14 @@ commitment to environmental conservation and scientific advancement in the Gulf 
 </p>
         </div>
       );
-    }else if (trimmedCmd === 'resume') {
-      output = <p>Opening Terrel's Resume...</p>;
+    }else if (trimmedCmd === 'resume' || trimmedCmd === 'cat resume.pdf') {
+      output = <p>Opening Terrel&apos;s Resume...</p>;
       // Add logic to open resume
       setTimeout(() => {
         window.open('/resume.pdf', '_blank');
       }, 1000);
     
-    } else if (trimmedCmd === 'skills') {
-      output = (
-        <div>
-          <p className="mb-1"><span className="text-blue-400">Languages:</span> JavaScript, TypeScript, Python</p>
-          <p className="mb-1"><span className="text-blue-400">Frontend:</span> React, Next.js, TailwindCSS</p>
-          <p className="mb-1"><span className="text-blue-400">Backend:</span> Node.js, Express, PostgreSQL</p>
-          <p className="mb-1"><span className="text-blue-400">Tools:</span> Git, Docker, AWS</p>
-        </div>
-      );
-    } else if (trimmedCmd === 'exit' || trimmedCmd === 'gui') {
+    }else if (trimmedCmd === 'exit' || trimmedCmd === 'gui') {
       output = <p>Switching to GUI mode...</p>;
       // Add logic to exit terminal
       setTimeout(() => {
@@ -198,7 +200,7 @@ commitment to environmental conservation and scientific advancement in the Gulf 
     } else if (trimmedCmd === '') {
       return;
     } else {
-      output = <p>Command not found: {cmd}. Type 'help' for available commands.</p>;
+      output = <p>Command not found: {cmd}. Type &apos;help&apos; for available commands.</p>;
       isError = true;
     }
 
@@ -254,7 +256,7 @@ commitment to environmental conservation and scientific advancement in the Gulf 
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-        <div className="text-xs text-gray-400">terminal - {name}'s portfolio</div>
+        <div className="text-xs text-gray-400">terminal - {name}&apos;s portfolio</div>
         <div className="w-4"></div> {/* Spacer for alignment */}
       </div>
 
@@ -321,7 +323,7 @@ commitment to environmental conservation and scientific advancement in the Gulf 
       {/* Help hint */}
       {initialComplete && (
         <div className="p-2 border-t border-gray-700 text-gray-500 text-xs text-center">
-          Type 'help' for available commands. Type 'gui' or 'exit' to switch to normal mode.
+          Type &apos;help&apos; for available commands. Type &apos;gui&apos; or &apos;exit&apos; to switch to normal mode.
         </div>
       )}
       

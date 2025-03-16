@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Record from "./record";
+// import Record from "./record";
 
 const Loading = () => {
     const [commands, setCommands] = useState<string[]>([]);
