@@ -106,6 +106,9 @@ commitment to environmental conservation and scientific advancement in the Gulf 
                           <li>JavaScript</li>
                           <li>TypeScript</li>
                           <li>Python</li>
+                          <li>Java</li>
+                          <li>SQL</li>
+                          <li>PHP</li>
                         </ul>
                       </div>
                       <div>

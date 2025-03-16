@@ -167,7 +167,7 @@ const NameCard: React.FC<NameCardProps> = ({ name, description, onExitTerminal }
           <p className="mb-1"><span className="text-blue-400">LinkedIn:</span> <a href="https://www.linkedin.com/in/terrel-verneuil-63b706167/" target="_blank" >https://www.linkedin.com/in/terrel-verneuil-63b706167/</a></p>
         </div>
       );
-    } else if (trimmedCmd === 'projects' || trimmedCmd === 'projects.txt') {
+    } else if (trimmedCmd === 'projects' || trimmedCmd === 'cat projects.txt') {
       output = (
         <div>
           <p className="mb-2"><span className="text-blue-400">NYPD Weekly Crime Mapping</span> Developed an interactive tool for visualizing crime data in New York City using Python for data acquisition and GeoJSON for mapping. The tool helps in analyzing and understanding crime patterns. Features include automatic data download, data cleaning, and interactive mapping with color-coded markers and clustering for better visualization. (*could expand to an application in future)
