@@ -71,7 +71,7 @@ const Loading = () => {
     return (
         <div className="flex flex-col justify-center items-start h-screen bg-black p-8 font-mono">
             <div className="flex items-center mb-4">
-                <Record />
+                {/* <Record /> */}
                 <p className="text-sm text-white-500 ml-4">Loading...Operation-Portfolio</p>
             </div>
             
