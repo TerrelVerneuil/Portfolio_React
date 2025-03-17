@@ -129,8 +129,8 @@ const NameCard: React.FC<NameCardProps> = ({ name, description, onExitTerminal }
       output = (
         <div>
           <div className="mb-4">
-          <p className="mb-1"><span className="text-blue-400">Languages:</span> JavaScript, TypeScript, Python</p>
-          <p className="mb-1"><span className="text-blue-400">Frontend:</span> React, Next.js, TailwindCSS</p>
+          <p className="mb-1"><span className="text-blue-400">Languages:</span> JavaScript, TypeScript, Python, Java, SQL, PHP</p>
+          <p className="mb-1"><span className="text-blue-400">Frontend:</span> React, Next.js, TailwindCSS, HTML/CSS</p>
           <p className="mb-1"><span className="text-blue-400">Backend:</span> Node.js, Express, PostgreSQL</p>
           <p className="mb-1"><span className="text-blue-400">Tools:</span> Git, Docker, AWS</p>
           </div>
@@ -252,9 +252,9 @@ commitment to environmental conservation and scientific advancement in the Gulf 
       {/* Terminal header */}
       <div className="flex items-center justify-between p-2 border-b border-gray-700 bg-gray-900">
         <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+          {/* <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500"></div> */}
         </div>
         <div className="text-xs text-gray-400">terminal - {name}&apos;s portfolio</div>
         <div className="w-4"></div> {/* Spacer for alignment */}
